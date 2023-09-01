@@ -12,7 +12,8 @@ Preview:
 ```lua
 local vdf = require("vdf")
 local data = vdf.parse([[
-"a" {
+"a"
+{
   "key" "value"
 }
 ]])
@@ -33,3 +34,19 @@ If you don't want to indent, provide a false
 ## pram3 disableNewline:boolean?
 
 By default, stringify uses newlines, but if you don't want to, you can disable them by providing true
+
+Preview:
+```lua
+local vdf = require("vdf")
+local data = { item = { value = "5000", element = "true" } }
+print(vdf.stringify(data))
+--[[
+it prints
+
+"item"
+{
+  "value" "5000"
+  "element" "true"
+}
+]]
+```
