@@ -2,6 +2,8 @@
 
 This is a Lua implementation of [KeyValues](https://developer.valvesoftware.com/wiki/KeyValues) from valvesoftware.
 
+#include and #base are not supported, this is just basic implementation. (due to lua's filesystem libs are differ for every engines)
+
 # usages
 
 ## parse(str:string)
