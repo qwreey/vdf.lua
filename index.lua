@@ -90,21 +90,21 @@ do
         local lastPos = pos
 
         while true do
-            local startAt,endAt,catch
-            startAt,endAt,catch = find(str,lineCommentRegex,pos)
+            local startAt,endAt
+            startAt,endAt = find(str,lineCommentRegex,pos)
             local op = -1
             if not startAt then
-                startAt,endAt,catch = find(str,stackStart,pos)
+                startAt,endAt = find(str,stackStart,pos)
             elseif op == -1 then
                 op = 0
             end
             if not startAt then
-                startAt,endAt,catch = find(str,stackEnd,pos)
+                startAt,endAt = find(str,stackEnd,pos)
             elseif op == -1 then
                 op = 1
             end
             if not startAt then
-                startAt,endAt,catch = find(str,stringStart,pos)
+                startAt,endAt = find(str,stringStart,pos)
             elseif op == -1 then
                 op = 2
             end
